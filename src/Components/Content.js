@@ -3,7 +3,6 @@ import lottie from "lottie-web";
 const Content = () => {
   const container = useRef(null);
   useEffect(() => {
-    console.log("ran");
     lottie.loadAnimation({
       container: container.current,
       renderer: "svg",
@@ -15,19 +14,12 @@ const Content = () => {
   return (
     <div className="content">
       <div className="welcome-title">
-        <h1>Welcome to GradeBuddy!</h1>
+        <h1>Welcome to GameBuddy!</h1>
       </div>
       <div className="animation" ref={container}></div>
       <p>
-        It is a long established fact that a reader will be distracted by the
-        readable content of a page when looking at its layout. The point of
-        using Lorem Ipsum is that it has a more-or-less normal distribution of
-        letters, as opposed to using 'Content here, content here', making it
-        look like readable English. Many desktop publishing packages and web
-        page editors now use Lorem Ipsum as their default model text, and a
-        search for 'lorem ipsum' will uncover many web sites still in their
-        infancy. Various versions have evolved over the years, sometimes by
-        accident, sometimes on purpose (injected humour and the like).
+        GameBuddy is here to help you find the best deals on games, so you can spend less time bargain hunting and more time levelling up!
+        You can search games by Steam App Id or by name (Steam App Id is more accurate). Happy shopping!
       </p>
     </div>
   );

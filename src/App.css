@@ -1,5 +1,6 @@
 :root{
   --background-color: hsl(240, 4%, 11%);
+  --input-background: hsl(240, 3%, 21%);
   --title-color: hsl(342, 92%, 40%);
   --font-color: hsl(150, 100%, 98%);
   --gradient: hsl(335, 91%, 30%);
@@ -100,6 +101,8 @@ select {
   padding: 1em;
   grid-template-columns: auto auto auto;
   color: var(--title-color);
+  align-items: center;
+  text-decoration: none;
 }
 
 .nav h1{
@@ -114,6 +117,22 @@ select {
   grid-column: 3;
   grid-row: 1;
   text-align: end;
+}
+
+.logged-in{
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  justify-content: end;
+  align-items: center;
+}
+
+.logged-in input{
+  height: 2rem;
+}
+
+.sign-links a{
+ color: var(--title-color);
 }
 
 .sign-links button{
@@ -154,3 +173,119 @@ select {
   grid-column: 2;
   width: 60%;
 }
+
+/* Signup */
+
+.signup-form{
+  display: grid;
+  grid-template-columns: 25% 50% 25%;
+  grid-template-rows: 10% 10% 10% 10% 10%;
+  height: 65vh;
+  align-items: center;
+  justify-items: center;
+}
+
+.form-name{
+  grid-column: 2;
+  width: 22rem;
+  height: 3.5rem;
+  background-color: var(--input-background);
+  border: none;
+  border-radius: 0.3em;
+}
+
+::placeholder{
+  color: var(--font-color);
+}
+
+.signup-form button{
+  grid-column: 2;
+  width: 22rem;
+  height: 80%;
+  border: none;
+  background-image: linear-gradient(to right, var(--title-color), var(--gradient));
+  color: var(--font-color);
+  border-radius: 0.3em;
+}
+
+/* Bundles page */
+.bundles{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 1rem;
+}
+
+.bundles a {
+  text-decoration: none;
+  color: var(--title-color);
+  margin-bottom: 8rem;
+}
+
+.bundle-info{
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Games */
+.game-container{
+  display: grid;
+  justify-content: center;
+  grid-template-rows: auto auto auto auto auto auto auto auto auto auto;
+}
+
+.game-info-list{
+  display: grid;
+  grid-template-columns: 30% 15% 15% 40%;
+  font-size: 0.8rem;
+  word-wrap: break-word;
+  border: 0.1rem var(--title-color) solid;
+  overflow: hidden;
+  grid-gap: 1rem;
+  color: var(--font-color);
+  padding: 2rem;
+  align-items: center;
+}
+
+/* FOOTER */
+
+.footer{
+  grid-area: footer;
+  background-color: var(--title-color);
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .nav h1{
+    font-size: 1.4rem;
+  }
+
+  .web-links{
+    display: none;
+  }
+
+  .sign-links{
+    display: none;
+  }
+
+  .game-info-list{
+    font-size: 0.3rem;
+    padding: 1rem;
+    overflow: visible;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {}
