@@ -31,15 +31,15 @@ const Games = () => {
           <h1>Loading</h1>
         ) : (
           games.map((game, i) => (
-            <div>
-              <a key={i} href={game.link} style={{ textDecoration: "none" }} target="_blank" rel="noreferrer">
-                <div key={i} className="game-info-list">
-                  <h1 key={i}>{game.name}</h1>
-                  <h1 key={i}>{game.salePrice}</h1>
-                  <h1 key={i} style={{ textDecoration: "line-through" }}>
+            <div key={i}>
+              <a href={game.link} style={{ textDecoration: "none" }} target="_blank" rel="noreferrer">
+                <div  className="game-info-list">
+                  <h1>{game.name}</h1>
+                  <h1>{game.salePrice}</h1>
+                  <h1 style={{ textDecoration: "line-through" }}>
                     {game.originalPrice}
                   </h1>
-                  <h1 key={i}>{game.store}</h1>
+                  <h1>{game.store}</h1>
                 </div>
               </a>
             </div>
