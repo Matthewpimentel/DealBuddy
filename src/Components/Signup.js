@@ -22,7 +22,7 @@ const Signup = () => {
     e.preventDefault();
     if (userName.length > 0 && password.length > 0) {
       axios
-        .post("http://localhost:5000/api/createUser", {
+        .post("https://dealbuddy-backend.herokuapp.com/api/createUser", {
           data: {
             username: userName,
             email: email,

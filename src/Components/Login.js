@@ -17,7 +17,7 @@ const Login = () => {
   const signIn = () => {
     if (userName.length > 0 && password.length > 0) {
       axios
-        .post("http://localhost:5000/api/login", {
+        .post("https://dealbuddy-backend.herokuapp.com/api/login", {
           data: {
             username: userName,
             password: password,
