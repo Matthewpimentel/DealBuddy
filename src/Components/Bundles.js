@@ -27,7 +27,7 @@ const Bundles = () => {
           <h1>Loading</h1>
         ) : (
           bundles.map((bundle, i) => (
-            <a href={bundle.productUrl} target="_blank" rel="noreferrer" key={i}>
+            <a href={bundle.productUrl + "?partner=matheot"} target="_blank" rel="noreferrer" key={i}>
               <div className="bundle-info" key={i}>
                 <h1 key={i}>{bundle.name}</h1>
                 <img src={bundle.image} alt="bundle" key={i}></img>

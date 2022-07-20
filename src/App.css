@@ -250,6 +250,69 @@ select {
   align-items: center;
 }
 
+/* Search page */
+.search-game-container-box{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--title-color);
+}
+
+.search-game-container{
+  background-color: var(--input-background);
+  border-radius: 1rem;
+  margin: 2rem 2rem 2rem 2rem;
+}
+
+
+.search-game-container a{
+  text-decoration: none;
+  color: var(--title-color);
+}
+
+.search-game-info {
+  display: flex;
+  width: 25rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.search-game-info img{
+  width: 10rem;
+}
+
+/* PROFILE */
+.profile-container{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  color: var(--title-color);
+}
+
+.alert-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.alert-container-info{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5rem;
+}
+
+.alert-container-info button{
+  background-image: linear-gradient(to right, var(--title-color), var(--gradient));
+  border: none;
+  color: var(--font-color);
+}
+
 /* FOOTER */
 
 .footer{

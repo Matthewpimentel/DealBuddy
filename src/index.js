@@ -8,6 +8,7 @@ import Login from "./Components/Login";
 import Profile from "./Components/Profile";
 import Bundles from "./Components/Bundles";
 import Games from "./Components/Games";
+import SearchPage from "./Components/SearchPage";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -19,6 +20,7 @@ root.render(
       <Route path="/profile" element={<Profile/>}/>
       <Route path="/bundles" element={<Bundles/>}/>
       <Route path="/games" element={<Games/>}/>
+      <Route path="/searchResults/:name" element={<SearchPage/>}/>
     </Routes>
   </BrowserRouter>
 );
