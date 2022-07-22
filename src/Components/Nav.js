@@ -1,10 +1,12 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Nav = () => {
+
+  const navigate= useNavigate();
+
   const searchBarChange = (e) => {
     if(e.key === "Enter"){
-      console.log(e.currentTarget.value);
-      window.location.replace(`/searchResults/${e.currentTarget.value}`);
+      navigate(`/searchResults/${e.currentTarget.value}`);
     }
 };
   return (
@@ -17,7 +19,8 @@ const Nav = () => {
       <div className="sign-links">
         <Link to={"/signin"} style={{ textDecoration: 'none'}}><a>Sign In</a></Link>
         <Link to={"/signup"}><button>Sign Up</button></Link>
-        <input type="text" placeholder="Search" onKeyDown={(e) => searchBarChange(e)}></input>
+        <input type="text" placeholder="Search" onKeyDown={(e) => searchBarChange(e)}></input>  
+        <div id="test"></div>  
       </div>
     </div>
   );

@@ -1,8 +1,10 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { CgProfile } from "react-icons/cg";
 
 
 const LoggedInNav = () => {
+
+  const navigate= useNavigate();
 
   const getUserDetails = () => {
     let user = JSON.parse(localStorage.getItem("userDetails"));
@@ -12,8 +14,7 @@ const LoggedInNav = () => {
 
   const searchBarChange = (e) => {
       if(e.key === "Enter"){
-        console.log(e.currentTarget.value);
-        window.location.replace(`/searchResults/${e.currentTarget.value}`);
+        navigate(`/searchResults/${e.currentTarget.value}`);
       }
   };
 
