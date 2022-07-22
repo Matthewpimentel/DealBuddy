@@ -27,6 +27,7 @@ const Profile = () => {
                 if(localStorage.getItem("emailList").length === 2){
                     localStorage.removeItem("emailList");
                 }
+                window.location.reload();
             }
         })
     }
@@ -37,7 +38,7 @@ const Profile = () => {
       <div className="profile-container">
         <h1>{userDetails[0]}'s Alerts</h1>
         <div className="alert-container">
-          {savedAlerts.map((alerts, i) => (
+          {localStorage.getItem("emailList") === null ? <h1>Empty</h1> :savedAlerts.map((alerts, i) => (
             <div key={i} className="alert-container-info">
               <h1>{alerts.name}</h1>
               <h2>Alert is set at {alerts.price}</h2>
