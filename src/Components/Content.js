@@ -14,11 +14,11 @@ const Content = () => {
   return (
     <div className="content">
       <div className="welcome-title">
-        <h1>Welcome to GameBuddy!</h1>
+        <h1>Welcome to DealBuddy!</h1>
       </div>
       <div className="animation" ref={container}></div>
       <p>
-        GameBuddy is here to help you find the best deals on games, so you can spend less time bargain hunting and more time levelling up!
+        DealBuddy is here to help you find the best deals on games, so you can spend less time bargain hunting and more time levelling up!
         You can search games by Steam App Id or by name (Steam App Id is more accurate). Happy shopping!
       </p>
     </div>

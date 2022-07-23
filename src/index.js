@@ -9,6 +9,7 @@ import Profile from "./Components/Profile";
 import Bundles from "./Components/Bundles";
 import Games from "./Components/Games";
 import SearchPage from "./Components/SearchPage";
+import Footer from "./Components/Footer";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

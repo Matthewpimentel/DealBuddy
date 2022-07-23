@@ -85,6 +85,10 @@ select {
   }
 }
 
+button{
+  cursor: pointer;
+}
+
 .App{
   display: grid;
   grid-template-areas: 
@@ -112,11 +116,24 @@ select {
   font-size: 2rem;
 }
 
+.web-links a{
+  text-decoration: none;
+  color: var(--title-color);
+  margin-left: 3rem;
+  margin-right: 3rem;
+}
+
 .sign-links{
   grid-area: sign;
   grid-column: 3;
   grid-row: 1;
   text-align: end;
+}
+
+.mobile-hamburger{
+  display: none;
+  grid-column: 3;
+  justify-self: end;
 }
 
 .logged-in{
@@ -164,7 +181,7 @@ select {
 
 .animation{
   grid-row: 2;
-  width: 60%;
+  width: 70%;
   justify-self: end;
 }
 
@@ -172,6 +189,11 @@ select {
   grid-row: 2;
   grid-column: 2;
   width: 60%;
+}
+
+.hamburger-menu{
+  animation-name: hamburger;
+  animation-duration: 4s;
 }
 
 /* Signup */
@@ -294,6 +316,23 @@ select {
   color: var(--title-color);
 }
 
+.profile-header{
+  display: grid;
+  grid-template-columns: 50% 25%;
+  justify-content: end;
+}
+
+.profile-header button{
+  width: 5rem;
+  height: 2rem;
+  justify-self: end;
+  margin-right: 2rem;
+  font-size: 1rem;
+  background-image: linear-gradient(to right, var(--title-color), var(--gradient));
+  border: none;
+  color: white;
+}
+
 .alert-container{
   display: flex;
   flex-direction: column;
@@ -318,6 +357,15 @@ select {
 .footer{
   grid-area: footer;
   background-color: var(--title-color);
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: center;
+  justify-content: center;
+  grid-gap: 2rem;
+}
+
+.footer a{
+  color: white;
 }
 
 /* Extra small devices (phones, 600px and down) */
@@ -332,6 +380,10 @@ select {
 
   .sign-links{
     display: none;
+  }
+
+  .mobile-hamburger{
+    display: block;
   }
 
   .game-info-list{
@@ -352,3 +404,15 @@ select {
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {}
+
+/* Animations */
+@keyframes hamburger {
+  from{
+    width: 0%;
+    background-color: transparent;
+  }
+  to{
+    width: 100%;
+    background-color: var(--title-color);
+  }
+}

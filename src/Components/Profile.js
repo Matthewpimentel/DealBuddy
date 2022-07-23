@@ -1,9 +1,12 @@
 import LoggedInNav from "./LoggedInNav";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 const Profile = () => {
   let userDetails = JSON.parse(localStorage.getItem("userDetails"));
   let savedAlerts = JSON.parse(localStorage.getItem("emailList"));
+
+  const navigate= useNavigate();
 
   const [alerts, setAlerts] = useState([]);
     
@@ -32,11 +35,20 @@ const Profile = () => {
         })
     }
 
+    const signOut = () => {
+      localStorage.removeItem("userDetails");
+      localStorage.removeItem("token");
+      navigate("/");
+    }
+
   return (
     <div>
       <LoggedInNav />
       <div className="profile-container">
-        <h1>{userDetails[0]}'s Alerts</h1>
+        <div className="profile-header">
+          <h1>{userDetails[0]}'s Alerts</h1>
+          <button onClick={signOut}>Sign out</button>
+        </div>
         <div className="alert-container">
           {localStorage.getItem("emailList") === null ? <h1>Empty</h1> :savedAlerts.map((alerts, i) => (
             <div key={i} className="alert-container-info">
