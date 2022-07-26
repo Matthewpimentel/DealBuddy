@@ -35,7 +35,7 @@ const Games = () => {
               <a href={game.link} style={{ textDecoration: "none" }} target="_blank" rel="noreferrer">
                 <div  className="game-info-list">
                   <h1>{game.name}</h1>
-                  <h1>{game.salePrice}</h1>
+                  <h1>${game.salePrice}</h1>
                   <h1 style={{ textDecoration: "line-through" }}>
                     {game.originalPrice}
                   </h1>

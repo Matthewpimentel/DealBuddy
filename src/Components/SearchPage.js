@@ -36,7 +36,6 @@ const SearchPage = () => {
     if (localStorage.getItem("emailList") === null) {
       savedGames.push(savedGame);
       localStorage.setItem("emailList", JSON.stringify(savedGames));
-      console.log("dumb");
       alert(
         "Price alert has been set. You will receive an email if the price drops below the current price. To delete alerts go to your profile!"
       );

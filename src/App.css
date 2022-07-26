@@ -192,8 +192,36 @@ button{
 }
 
 .hamburger-menu{
-  animation-name: hamburger;
-  animation-duration: 4s;
+  display: grid;
+  grid-template-rows: auto auto auto auto;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  background-color: var(--title-color);
+  width: 100vw;
+  height: 100vh;
+  animation-name: hamburger-menu;
+  animation-duration: 0.5s;
+}
+
+.hamburger-menu a{
+  animation-name: hamburger-link;
+  animation-duration: 3s;
+  text-decoration: none;
+  color: var(--font-color);
+}
+
+.hamburger-close{
+  color: var(--font-color);
+  justify-self: end;
+}
+
+.hamburger-background-close{
+  animation-name: hamburger-menu-close;
+  animation-duration: 0.5s;
 }
 
 /* Signup */
@@ -202,6 +230,7 @@ button{
   display: grid;
   grid-template-columns: 25% 50% 25%;
   grid-template-rows: 10% 10% 10% 10% 10%;
+  grid-gap: 0.5rem;
   height: 65vh;
   align-items: center;
   justify-items: center;
@@ -209,7 +238,7 @@ button{
 
 .form-name{
   grid-column: 2;
-  width: 22rem;
+  width: 20rem;
   height: 3.5rem;
   background-color: var(--input-background);
   border: none;
@@ -228,6 +257,12 @@ button{
   background-image: linear-gradient(to right, var(--title-color), var(--gradient));
   color: var(--font-color);
   border-radius: 0.3em;
+}
+
+.invalid-user{
+  color: var(--title-color);
+  grid-column: 2;
+  grid-row: 4;
 }
 
 /* Bundles page */
@@ -370,6 +405,11 @@ button{
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
+  .content{
+      display: flex;
+      flex-direction: column;
+  }
+
   .nav h1{
     font-size: 1.4rem;
   }
@@ -384,12 +424,18 @@ button{
 
   .mobile-hamburger{
     display: block;
+    z-index: 100;
+    color: white;
   }
 
   .game-info-list{
     font-size: 0.3rem;
     padding: 1rem;
     overflow: visible;
+  }
+
+  .signup-form{
+    
   }
 }
 
@@ -406,7 +452,7 @@ button{
 @media only screen and (min-width: 1200px) {}
 
 /* Animations */
-@keyframes hamburger {
+@keyframes hamburger-menu {
   from{
     width: 0%;
     background-color: transparent;
@@ -416,3 +462,24 @@ button{
     background-color: var(--title-color);
   }
 }
+
+@keyframes hamburger-link {
+  from{
+    color: transparent;
+  }
+  to{
+    color: var(--font-color);
+  }
+}
+
+@keyframes hamburger-menu-close {
+  from{
+    width: 100%;
+    background-color: var(--title-color);
+  }
+  to{
+    width: 0%;
+    background-color: transparent;
+  }
+}
+

@@ -1,19 +1,26 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { useState } from "react";
+import Hamburger from "./Hamburger";
 const Nav = () => {
-  const navigate = useNavigate();
+  const [show, setShow] = useState(false);
 
   const searchBarChange = (e) => {
     if (e.key === "Enter") {
-      navigate(`/searchResults/${e.currentTarget.value}`);
+      window.location = `/searchResults/${e.currentTarget.value}`;
     }
   };
 
   const showHamburger = () => {
+    setShow(true);
 
+    if (show === true) {
+      setShow(false);
+    }
   };
   return (
     <div id="hamburger-menu">
+      {show && <Hamburger id="hamburger-background" />}
       <div className="nav">
         <Link to={"/"} style={{ textDecoration: "none" }}>
           <h1>DealBuddy</h1>
