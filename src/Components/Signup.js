@@ -5,6 +5,10 @@ const Signup = () => {
   const [userName, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [passwordMatch, setPasswordMatch] = useState(true);
+  const [emailOrUser, setEmailOrUser] = useState(true);
+  const [checkEmailFormat, setCheckEmailFormat] = useState(true);
 
   const handleChangeUsername = (event) => {
     setUsername(event.target.value);
@@ -18,9 +22,25 @@ const Signup = () => {
     setPassword(event.target.value);
   };
 
+  const handleConfirmPassword = (event) => {
+    setConfirmPassword(event.target.value);
+  };
+
+  const validateEmail = (email) => {
+    let re = /\S+@\S+\.\S+/;
+    return re.test(email);
+  }
+
   const sendData = (e) => {
+    setPasswordMatch(true);
+    setEmailOrUser(true);
+    setCheckEmailFormat(validateEmail(email));
     if (e.key === "Enter") {
-      if (userName.length > 0 && password.length > 0) {
+      if (
+        userName.length > 5 &&
+        (password.length > 5) & (password === confirmPassword) &&
+        email.length > 5 && checkEmailFormat === true
+      ) {
         axios
           .post("https://dealbuddy-backend.herokuapp.com/api/createUser", {
             data: {
@@ -43,13 +63,22 @@ const Signup = () => {
               window.location.replace("/");
             }
           })
-          .catch((err) => console.log(err.response.status));
+          .catch((err) => setEmailOrUser(false));
+      } else if (password !== confirmPassword) {
+        setPasswordMatch(false);
       }
     }
   };
 
   const clickSignUp = () => {
-    if (userName.length > 0 && password.length > 0) {
+    setPasswordMatch(true);
+    setEmailOrUser(true);
+    setCheckEmailFormat(validateEmail(email));
+    if (
+      userName.length > 5 &&
+      (password.length > 5) & (password === confirmPassword) &&
+      email.length > 5 && checkEmailFormat === true
+    ) {
       axios
         .post("https://dealbuddy-backend.herokuapp.com/api/createUser", {
           data: {
@@ -72,7 +101,9 @@ const Signup = () => {
             window.location.replace("/");
           }
         })
-        .catch((err) => console.log(err.response.status));
+        .catch((err) => setEmailOrUser(false));
+    } else if (password !== confirmPassword) {
+      setPasswordMatch(false);
     }
   };
 
@@ -108,10 +139,23 @@ const Signup = () => {
           type={"password"}
           placeholder="Confirm Password"
           className="form-name"
-          rquired
+          onChange={handleConfirmPassword}
+          required
           onKeyDown={(e) => sendData(e)}
         ></input>
         <button onClick={clickSignUp}>SIGN UP</button>
+        <div className="invalid-signup">
+          {passwordMatch === false ? (
+            <h1>Password's do not match</h1>
+          ) : (
+            <h1></h1>
+          )}
+          {emailOrUser === false ? (
+            <h1>Username or Email already exists</h1>
+          ) : (
+            <h1></h1>
+          )}{checkEmailFormat === false ? <h1>Invalid email</h1> : <h1></h1>}
+        </div>
       </div>
     </div>
   );
