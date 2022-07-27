@@ -267,19 +267,15 @@ button{
   align-self: flex-start;
 }
 
-.invalid-user{
-  color: var(--title-color);
-  grid-column: 2;
-  grid-row: 4;
-}
-
 .invalid-signup{
   display: flex;
   flex-direction: column;
+  align-items: center;
   grid-column: 2;
   grid-row: 7;
   align-self: flex-start;
   color: var(--title-color);
+  text-align: center;
 }
 
 /* Bundles page */
