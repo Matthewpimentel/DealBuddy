@@ -144,6 +144,7 @@ const Signup = () => {
           onKeyDown={(e) => sendData(e)}
         ></input>
         <button onClick={clickSignUp}>SIGN UP</button>
+        <div className="signup-requirements"><h1>Email and Password must have 6 or more characters</h1></div>
         <div className="invalid-signup">
           {passwordMatch === false ? (
             <h1>Password's do not match</h1>

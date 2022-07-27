@@ -259,6 +259,14 @@ button{
   border-radius: 0.3em;
 }
 
+.signup-requirements{
+  grid-column: 2;
+  grid-row: 6;
+  color: var(--title-color);
+  font-size: 0.5rem;
+  align-self: flex-start;
+}
+
 .invalid-user{
   color: var(--title-color);
   grid-column: 2;
@@ -268,9 +276,8 @@ button{
 .invalid-signup{
   display: flex;
   flex-direction: column;
-  align-items: center;
   grid-column: 2;
-  grid-row: 6;
+  grid-row: 7;
   align-self: flex-start;
   color: var(--title-color);
 }
