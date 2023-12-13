@@ -10,7 +10,7 @@ const Bundles = () => {
   useEffect(() => {
     const getBundles = async () => {
       setLoading(true);
-      const response = await axios.get("https://dealbuddy-backend.herokuapp.com/api/getBundles");
+      const response = await axios.get("https://deal-buddy-78e1f7201a81.herokuapp.com/api/getBundles");
       setBundles(response.data);
 
       setLoading(false);

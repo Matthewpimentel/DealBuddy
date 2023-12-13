@@ -42,7 +42,7 @@ const Signup = () => {
         email.length > 5 && checkEmailFormat === true
       ) {
         axios
-          .post("https://dealbuddy-backend.herokuapp.com/api/createUser", {
+          .post("https://deal-buddy-78e1f7201a81.herokuapp.com/api/createUser", {
             data: {
               username: userName,
               email: email,

@@ -19,7 +19,7 @@ const Login = () => {
     setInvalidUser(false);
     if (userName.length > 0 && password.length > 0) {
       axios
-        .post("https://dealbuddy-backend.herokuapp.com/api/login", {
+        .post("https://deal-buddy-78e1f7201a81.herokuapp.com/api/login", {
           data: {
             username: userName,
             password: password,

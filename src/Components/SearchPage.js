@@ -13,7 +13,7 @@ const SearchPage = () => {
   useEffect(() => {
     const getGames = async () => {
       setLoading(true);
-      const response = await axios.get("https://dealbuddy-backend.herokuapp.com/api/search", {
+      const response = await axios.get("https://deal-buddy-78e1f7201a81.herokuapp.com/api/search", {
         params: {
           name: name,
         },
