@@ -1,4 +1,4 @@
-# DealBuddy
+# DealBuddy (Backend currently down due to heroku changing pricing)
 
 ## Overview
 
